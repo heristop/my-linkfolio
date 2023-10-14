@@ -19,7 +19,7 @@
         "href": "https://www.linkedin.com/in/heristop",
         "iconSrc": "/assets/linkedin.webp",
         "title": "LinkedIn",
-        "description": "👨‍💻 My Job",
+        "description": "👨‍💻 My Current Job",
         "bgColor": "bg-blue-700",
         "hoverColor": "bg-blue-800"
     },
@@ -27,7 +27,7 @@
         "href": "https://twitter.com/heristop",
         "iconSrc": "/assets/twitter.webp",
         "title": "Twitter",
-        "description": "🐦 X",
+        "description": "🐦 (X)",
         "bgColor": "bg-blue-400",
         "hoverColor": "bg-blue-500"
     },
@@ -35,7 +35,15 @@
         "href": "https://gutenku.xyz",
         "iconSrc": "/assets/gutenku.webp",
         "title": "Gutenku",
-        "description": "📚 A Haiku generator",
+        "description": "📚 Haiku Generator with AI",
+        "bgColor": "bg-black",
+        "hoverColor": "bg-gray-700"
+    },
+    {
+        "href": "https://heristop.github.io",
+        "iconSrc": "/assets/zazen.webp",
+        "title": "Zazen Code",
+        "description": "📝 Blog",
         "bgColor": "bg-black",
         "hoverColor": "bg-gray-700"
     }
