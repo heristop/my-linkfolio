@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import SocialLinks from './SocialLinks';
+import SocialLinks from './components/SocialLinks';
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
       <SocialLinks />
 
       <footer className="mt-8 text-center bg-gray-200 text-gray-600 px-6 py-2 text-sm rounded">
-        Made by heristop
+        Made by <a className="hover:text-gray-400" href="https://github.com/heristop/linktree" target="_blank">heristop</a>
       </footer>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { SocialNetworkProps } from './types';
+import { SocialNetworkProps } from '../types';
 
 const SocialNetwork: React.FC<SocialNetworkProps> = ({
     href,
