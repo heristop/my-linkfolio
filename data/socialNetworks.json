@@ -1,0 +1,42 @@
+[
+    {
+        "href": "https://github.com/heristop",
+        "iconSrc": "/assets/github.webp",
+        "title": "GitHub",
+        "description": "💻 Open Source Projects",
+        "bgColor": "bg-gray-200",
+        "hoverColor": "bg-gray-300"
+    },
+    {
+        "href": "https://instagram.com/heristop",
+        "iconSrc": "/assets/instagram.webp",
+        "title": "Instagram",
+        "description": "🖼️ Arts, ✈️ Travels",
+        "bgColor": "bg-pink-500",
+        "hoverColor": "bg-pink-600"
+    },
+    {
+        "href": "https://www.linkedin.com/in/heristop",
+        "iconSrc": "/assets/linkedin.webp",
+        "title": "LinkedIn",
+        "description": "👨‍💻 My Job",
+        "bgColor": "bg-blue-700",
+        "hoverColor": "bg-blue-800"
+    },
+    {
+        "href": "https://twitter.com/heristop",
+        "iconSrc": "/assets/twitter.webp",
+        "title": "Twitter",
+        "description": "🐦 X",
+        "bgColor": "bg-blue-400",
+        "hoverColor": "bg-blue-500"
+    },
+    {
+        "href": "https://gutenku.xyz",
+        "iconSrc": "/assets/gutenku.webp",
+        "title": "Gutenku",
+        "description": "📚 A Haiku generator",
+        "bgColor": "bg-black",
+        "hoverColor": "bg-gray-700"
+    }
+]
