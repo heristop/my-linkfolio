@@ -16,7 +16,7 @@ LinkFolio is a minimalist web page that acts as a hub for all your online presen
 
 Edit `app/config.js`:
 
-```json
+```js
 export default {
   avatarSrc: "",
   avatarAlt: "",
