@@ -1,3 +1,5 @@
-# Heristop LinkTree
+# LinkHub
 
-A LinkTree clone
+A single page displaying my social links made with Next.js and Tailwind
+
+![Preview](/docs/preview.png)
