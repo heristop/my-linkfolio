@@ -1,6 +1,6 @@
 import Image from "next/image";
-import SocialLinks from "../components/SocialLinks";
-import MyProfile from "../components/MyProfile";
+import SocialLinks from "../src/components/SocialLinks";
+import MyProfile from "../src/components/MyProfile";
 
 export default function Home() {
   return (

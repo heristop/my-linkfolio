@@ -1,5 +1,5 @@
 import Image from "next/image";
-import config from "../app/config";
+import config from "../../app/config";
 
 function MyProfile() {
   return (
