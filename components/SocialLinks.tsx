@@ -1,7 +1,7 @@
 import React from "react";
 import SocialNetwork from "./SocialNetwork";
-import config from "../config";
-import { SocialNetworkProps } from "../types";
+import config from "../app/config";
+import { SocialNetworkProps } from "./types";
 
 const SocialLinks = () => {
   return (
