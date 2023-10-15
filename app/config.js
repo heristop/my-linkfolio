@@ -1,6 +1,4 @@
 export default {
-  title: "Alexandre Mogère",
-  metaDescription: "Alexandre Mogère",
   avatarSrc: "/assets/avatar.webp",
   avatarAlt: "Avatar",
   fullName: "Alexandre Mederic Mogère",
