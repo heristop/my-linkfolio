@@ -13,7 +13,7 @@ export default function Home() {
 
       <footer className="mt-4 text-center bg-gray-200 text-gray-600 px-6 py-2 text-sm rounded">
         Made by{" "}
-        <a href="https://github.com/heristop/linkhub" target="_blank">
+        <a href="https://github.com/heristop/linkfolio" target="_blank">
           heristop
         </a>
       </footer>
