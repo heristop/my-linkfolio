@@ -1,5 +1,5 @@
 export interface SocialNetworkProps {
-  href: string;
+  url: string;
   iconSrc: string;
   title: string;
   description: string;

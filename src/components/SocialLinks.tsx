@@ -11,7 +11,7 @@ const SocialLinks = () => {
           <SocialNetwork
             key={index}
             delay={index * 100}
-            href={network.href}
+            url={network.url}
             iconSrc={network.iconSrc}
             title={network.title}
             description={network.description}

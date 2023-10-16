@@ -3,7 +3,7 @@ import Image from "next/image";
 import { SocialNetworkProps } from "../types";
 
 const SocialNetwork: React.FC<SocialNetworkProps> = ({
-  href,
+  url,
   iconSrc,
   title,
   description,
@@ -14,7 +14,7 @@ const SocialNetwork: React.FC<SocialNetworkProps> = ({
       className={`flex items-start justify-center p-2 w-full md:w-1/4 rounded hover:bg-gray-200 hover:opacity-90 transition duration-300 ease-in-out fade-in-up-bounce`}
       style={{ animationDelay: `${delay}ms` }}
     >
-      <a href={href} target="blank">
+      <a href={url} target="blank">
         <Image
           src={iconSrc}
           alt={description}
