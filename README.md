@@ -5,7 +5,9 @@ LinkFolio is a minimalist web page that acts as a hub for all your online presen
 ## Features
 
 🚀 Built with Next.js for optimal performance.
+
 💅 Styled using TailwindCSS for a modern look.
+
 🛠️ Easy configuration to add or remove links.
 
 ## Preview
@@ -18,13 +20,13 @@ Edit `app/config.js`:
 
 ```js
 export default {
-  avatarSrc: "",
-  avatarAlt: "",
-  fullName: "",
-  pseudo: "@",
+  avatarSrc: "/assets/avatar.webp",
+  avatarAlt: "Avatar",
+  fullName: "Pseudo",
+  pseudo: "@pseudo",
   socialNetworks: [
     {
-      href: "https://github.com/",
+      url: "https://github.com/{pseudo}",
       iconSrc: "/assets/github.webp",
       title: "GitHub",
       description: "Open-source contributions",
