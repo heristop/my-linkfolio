@@ -41,11 +41,11 @@ export default {
 
 1. Clone the repository: git clone https://github.com/heristop/linkfolio
 
-2. Navigate to the project directory: cd linkfolio
+2. Navigate to the project directory: `cd linkfolio`
 
-3. Install dependencies: pnpm install
+3. Install dependencies: `pnpm install`
 
-4. Start the development server: pnpm dev
+4. Start the development server: `pnpm dev`
 
 Visit http://localhost:3000 to see the app running.
 
