@@ -1,6 +1,6 @@
 # LinkFolio
 
-![Logo](/docs/linkfolio.png)
+![Logo](/docs/linkfolio_180.png)
 
 LinkFolio is a minimalist web page that acts as a hub for all your online presence. Initially created for my personal use, I'm not considering yet transforming it into a package.
 
