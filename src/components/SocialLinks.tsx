@@ -1,21 +1,17 @@
 import React from "react";
 import SocialNetwork from "./SocialNetwork";
-import config from "../../app/config";
-import { SocialNetworkProps } from "../types";
+import { SocialLinksProps, SocialNetworkType } from "../types";
 
-const SocialLinks = () => {
+const SocialLinks = ({ userConfig }: SocialLinksProps) => {
+  if (!userConfig.socialNetworks) {
+    return null;
+  }
+
   return (
     <main className="flex flex-wrap gap-y-4 gap-x-20 justify-center">
-      {config.socialNetworks.map(
-        (network: SocialNetworkProps, index: number) => (
-          <SocialNetwork
-            key={index}
-            delay={index * 100}
-            url={network.url}
-            iconSrc={network.iconSrc}
-            title={network.title}
-            description={network.description}
-          />
+      {userConfig.socialNetworks.map(
+        (config: SocialNetworkType, index: number) => (
+          <SocialNetwork key={index} config={config} delay={index * 100} />
         ),
       )}
     </main>

@@ -1,30 +1,32 @@
-export default {
+import { githubIcon, instagramIcon, linkedinIcon, xIcon } from "@/src/assets";
+
+const userConfig = {
   avatarSrc: "/assets/avatar.webp",
   avatarAlt: "Avatar",
   fullName: "Alexandre Mederic Mogère",
-  pseudo: "@heristop",
+  alias: "@heristop",
   socialNetworks: [
     {
       url: "https://github.com/heristop",
-      iconSrc: "/assets/github.webp",
+      iconSrc: githubIcon,
       title: "GitHub",
       description: "Open-source contributions",
     },
     {
       url: "https://instagram.com/heristop",
-      iconSrc: "/assets/instagram.webp",
+      iconSrc: instagramIcon,
       title: "Instagram",
       description: "Art & travel snapshots",
     },
     {
       url: "https://www.linkedin.com/in/heristop",
-      iconSrc: "/assets/linkedin.webp",
+      iconSrc: linkedinIcon,
       title: "LinkedIn",
       description: "Professional overview",
     },
     {
       url: "https://x.com/heristop",
-      iconSrc: "/assets/x.webp",
+      iconSrc: xIcon,
       title: "Twitter / X",
       description: "Tech monitoring",
     },
@@ -42,3 +44,5 @@ export default {
     },
   ],
 };
+
+export default userConfig;
