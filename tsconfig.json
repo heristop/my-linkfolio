@@ -22,15 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/defaultConfig.js",
-    "app/config.ts",
-    "app/config.ts",
-    "app/config.ts"
-  ],
+  "include": ["next-env.d.ts", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
