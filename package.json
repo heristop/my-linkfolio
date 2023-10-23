@@ -1,5 +1,5 @@
 {
-  "name": "heristop-linkfolio",
+  "name": "my-linkfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.5.5",
+    "linkfolio": "^0.2.3",
+    "next": "^13.5.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@types/node": "^20.8.6",

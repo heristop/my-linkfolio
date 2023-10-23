@@ -1,47 +1,26 @@
-# LinkFolio
+# LinkFolio Page
 
-![Logo](/docs/linkfolio_180.png)
+![LinkFolio](https://github.com/heristop/linkfolio/blob/main/docs/linkfolio.png?raw=true)
 
-LinkFolio is a minimalist web page that acts as a hub for all your online presence. Initially created for my personal use, I'm not considering yet transforming it into a package.
+A sleek, minimalist landing page that connects your audience to all of your online presences.
 
-## Features
-
-🚀 Built with Next.js for optimal performance.
-
-💅 Styled using TailwindCSS for a modern look.
-
-🛠️ Easy configuration to add or remove links.
+**Want your own LinkFolio page? Simply install it from this template: [🔗LinkFolio](https://github.com/heristop/linkfolio).**
 
 ## Preview
 
-![Preview](/docs/preview.png)
+![Preview](https://github.com/heristop/linkfolio/blob/main/docs/preview.png?raw=true)
 
-## Configuration
+## Features:
 
-Edit `app/config.js`:
-
-```js
-export default {
-  avatarSrc: "/assets/avatar.webp",
-  avatarAlt: "Avatar",
-  fullName: "Pseudo",
-  pseudo: "@pseudo",
-  socialNetworks: [
-    {
-      url: "https://github.com/{pseudo}",
-      iconSrc: "/assets/github.webp",
-      title: "GitHub",
-      description: "Open-source contributions",
-    },
-  ],
-};
-```
+- 🚀 Built with Next.js for optimal performance
+- 💅 Styled using TailwindCSS for a modern look
+- 🛠️ Easy configuration to add or remove links
 
 ## Installation
 
-1. Clone the repository: git clone https://github.com/heristop/linkfolio
+1. Clone the repository: git clone https://github.com/heristop/my-linkfolio
 
-2. Navigate to the project directory: `cd linkfolio`
+2. Navigate to the project directory: `cd my-linkfolio`
 
 3. Install dependencies: `pnpm install`
 
@@ -49,6 +28,23 @@ export default {
 
 Visit http://localhost:3000 to see the app running.
 
-## Contribution
+## Configuration
 
-Feel free to fork the repository and make customizations as per your need. If you have ideas to improve or found a bug, do not hesitate to create an issue or submit a pull request.
+Edit `app/userConfig.js`:
+
+```js
+const userConfig = {
+  avatarSrc: "/assets/avatar.webp",
+  avatarAlt: "Avatar",
+  fullName: "Your Name",
+  alias: "@your_alias",
+  socialNetworks: [
+    {
+      url: "https://github.com/{your_alias}",
+      iconSrc: githubIcon,
+      title: "GitHub",
+      description: "Open-source contributions",
+    },
+  ],
+};
+```

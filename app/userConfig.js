@@ -1,4 +1,9 @@
-import { githubIcon, instagramIcon, linkedinIcon, xIcon } from "@/src/assets";
+import {
+  githubIcon,
+  instagramIcon,
+  linkedinIcon,
+  xIcon,
+} from "linkfolio/src/assets";
 
 const userConfig = {
   avatarSrc: "/assets/avatar.webp",
