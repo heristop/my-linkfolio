@@ -39,7 +39,7 @@ const userConfig = {
       url: "https://gutenku.xyz",
       iconSrc: "/assets/gutenku.webp",
       title: "GutenKu",
-      description: "Haiku generator using Gutenberg and AI",
+      description: "Haiku generator using Gutenberg",
     },
     {
       url: "https://heristop.github.io",
