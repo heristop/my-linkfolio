@@ -6,10 +6,6 @@ A sleek, minimalist landing page that connects your audience to all of your onli
 
 **Want your own LinkFolio page? Simply install it from this template: [🔗LinkFolio](https://github.com/heristop/linkfolio).**
 
-## Preview
-
-![Preview](https://github.com/heristop/linkfolio/blob/main/docs/preview.png?raw=true)
-
 ## Features:
 
 🚀 Built with Next.js for optimal performance
