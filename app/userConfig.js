@@ -8,7 +8,7 @@ import {
 const userConfig = {
   avatarSrc: "/assets/avatar.webp",
   avatarAlt: "Avatar",
-  fullName: "Alexandre Mederic Mogère",
+  fullName: "Alexandre Mogère",
   alias: "@heristop",
   socialNetworks: [
     {
