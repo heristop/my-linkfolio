@@ -4,7 +4,7 @@ const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "**/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/linkfolio/dist/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -12,7 +12,7 @@ const config: Config = {
         roboto: ["Roboto", "sans-serif"],
       },
       colors: {
-        primary: "#2F5D62",
+        primary: "#000000",
         secondary: "#5E8B7E",
         "background-start": "#2F5D62",
         "background-end": "#A7C4BC",
