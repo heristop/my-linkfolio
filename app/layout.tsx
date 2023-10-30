@@ -1,4 +1,4 @@
-import "linkfolio/src/assets/globals.css";
+import "linkfolio/dist/assets/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import userConfig from "./userConfig";
