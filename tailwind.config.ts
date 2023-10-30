@@ -12,7 +12,7 @@ const config: Config = {
         roboto: ["Roboto", "sans-serif"],
       },
       colors: {
-        primary: "#000000",
+        primary: "#2F5D62",
         secondary: "#5E8B7E",
         "background-start": "#2F5D62",
         "background-end": "#A7C4BC",
