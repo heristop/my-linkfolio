@@ -1,12 +1,13 @@
 import "linkfolio/src/assets/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import userConfig from "./userConfig";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Alexandre Mogère",
-  description: "Alexandre Mogère's Links",
+  title: userConfig.metaTitle,
+  description: userConfig.metaDescription,
 };
 
 export default function RootLayout({
@@ -39,10 +40,15 @@ export default function RootLayout({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#2f5d62" />
-        <link rel="manifest" href="/site.webmanifest" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Alexandre Mogère" />
-        <meta property="og:description" content="Alexandre Mogère's Links" />
+        <meta
+          property="og:title"
+          content={userConfig.metaTitle ?? "LinkFolio"}
+        />
+        <meta
+          property="og:description"
+          content={userConfig.metaDescription ?? "LinkFolio"}
+        />
       </head>
 
       <body className={inter.className}>{children}</body>

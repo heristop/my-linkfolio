@@ -3,7 +3,7 @@ import {
   instagramIcon,
   linkedinIcon,
   xIcon,
-} from "linkfolio/src/assets";
+} from "linkfolio/dist/assets";
 
 const userConfig = {
   avatarSrc: "/assets/avatar.webp",
