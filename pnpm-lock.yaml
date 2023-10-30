@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   linkfolio:
-    specifier: ^0.2.8
-    version: 0.2.8(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)(sharp@0.32.6)(tailwindcss@3.3.5)
+    specifier: ^0.2.9
+    version: 0.2.9(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)(sharp@0.32.6)(tailwindcss@3.3.5)
   next:
     specifier: ^13.5.6
     version: 13.5.6(react-dom@18.2.0)(react@18.2.0)
@@ -1965,8 +1965,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: false
 
-  /linkfolio@0.2.8(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)(sharp@0.32.6)(tailwindcss@3.3.5):
-    resolution: {integrity: sha512-GcHagdSftBANkzKCmOrYcqqttBjFmTdxM+90s08/gd7d73mkaRXlevMPXpWmdNWe8VKI4uDTe1QgdjOKZqGUxA==}
+  /linkfolio@0.2.9(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)(sharp@0.32.6)(tailwindcss@3.3.5):
+    resolution: {integrity: sha512-op0hGtvzYV6ziixv4SpWPCHwMjV0AjiPrkFBH5qo/x80DoYWE6kxV0lvVkivOrTxWGTI+PDgcXbSHcepdh7TPw==}
     peerDependencies:
       next: ^13.5.6
       react: ^18.2.0
