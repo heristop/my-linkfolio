@@ -1,7 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import { Analytics } from "linkfolio";
 import userConfig from "./user.config";
 import "linkfolio/dist/assets/globals.css";
 
@@ -54,8 +53,6 @@ export default function RootLayout({
           property="og:description"
           content={userConfig.metaDescription ?? "LinkFolio"}
         />
-
-        <Analytics />
       </head>
 
       <body className={roboto.className}>{children}</body>
