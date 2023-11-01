@@ -1,9 +1,13 @@
 import "linkfolio/dist/assets/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import userConfig from "./userConfig";
+import { Roboto } from "next/font/google";
+import { Analytics } from "linkfolio";
+import userConfig from "./user.config";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: userConfig.metaTitle,
@@ -49,9 +53,11 @@ export default function RootLayout({
           property="og:description"
           content={userConfig.metaDescription ?? "LinkFolio"}
         />
+
+        <Analytics />
       </head>
 
-      <body className={inter.className}>{children}</body>
+      <body className={roboto.className}>{children}</body>
     </html>
   );
 }
