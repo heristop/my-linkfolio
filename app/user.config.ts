@@ -46,7 +46,7 @@ const userConfig = {
     {
       url: "https://heristop.github.io",
       iconSrc: "/assets/zazen.webp",
-      title: "ZazenCode",
+      title: "Zazen Code",
       description: "Tech Blog",
     },
   ],
