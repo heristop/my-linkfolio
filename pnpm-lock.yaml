@@ -7,7 +7,7 @@ settings:
 dependencies:
   linkfolio:
     specifier: ^0.2.11
-    version: 0.2.11(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)(sharp@0.32.6)(tailwindcss@3.3.5)
+    version: 0.2.11(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)(sharp@0.32.6)(tailwindcss@3.4.0)
   next:
     specifier: ^13.5.6
     version: 13.5.6(react-dom@18.2.0)(react@18.2.0)
@@ -21,8 +21,8 @@ dependencies:
     specifier: ^0.32.6
     version: 0.32.6
   tailwindcss:
-    specifier: ^3.3.5
-    version: 3.3.5
+    specifier: ^3.4.0
+    version: 3.4.0
 
 devDependencies:
   '@types/node':
@@ -2032,7 +2032,7 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: false
 
-  /linkfolio@0.2.11(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)(sharp@0.32.6)(tailwindcss@3.3.5):
+  /linkfolio@0.2.11(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)(sharp@0.32.6)(tailwindcss@3.4.0):
     resolution: {integrity: sha512-wZUsdokkItb21flnUt04YOxwO4PLRFZlbAWgPKrrDAHxDjEg9yRXglnWq1ImaDGxBH9zLrd+DFqFbPPGnq7EOQ==}
     peerDependencies:
       next: ^13.5.6
@@ -2048,7 +2048,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       sharp: 0.32.6
-      tailwindcss: 3.3.5
+      tailwindcss: 3.4.0
     dev: false
 
   /lint-staged@15.2.0:
@@ -2480,7 +2480,7 @@ packages:
     dependencies:
       lilconfig: 2.1.0
       postcss: 8.4.32
-      yaml: 2.3.3
+      yaml: 2.3.4
     dev: false
 
   /postcss-nested@6.0.1(postcss@8.4.32):
@@ -3003,8 +3003,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /tailwindcss@3.3.5:
-    resolution: {integrity: sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==}
+  /tailwindcss@3.4.0:
+    resolution: {integrity: sha512-VigzymniH77knD1dryXbyxR+ePHihHociZbXnLZHUyzf2MMs2ZVqlUrZ3FvpXP8pno9JzmILt1sZPD19M3IxtA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -3304,15 +3304,9 @@ packages:
   /yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
-  /yaml@2.3.3:
-    resolution: {integrity: sha512-zw0VAJxgeZ6+++/su5AFoqBbZbrEakwu+X0M5HmcwUiBL7AzcuPKjj5we4xfQLp78LkEMpD0cOnUhmgOVy3KdQ==}
-    engines: {node: '>= 14'}
-    dev: false
-
   /yaml@2.3.4:
     resolution: {integrity: sha512-8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==}
     engines: {node: '>= 14'}
-    dev: true
 
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
