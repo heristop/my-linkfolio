@@ -9,25 +9,34 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "linkfolio": "^0.3.0",
-    "next": "^14.2.3",
-    "react": "^18.3.1",
+    "linkfolio": "^0.4.0"
+  },
+  "peerDependencies": {
+    "next": "^14.2.1",
+    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.33.3",
     "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
+    "@babel/plugin-transform-nullish-coalescing-operator": "^7.24.1",
+    "@playwright/test": "^1.43.1",
+    "@swc/core": "^1.4.13",
     "@types/node": "^20.12.7",
-    "@types/react": "^18.3.1",
+    "@types/react": "^18.2.77",
     "@types/react-dom": "^18.2.25",
-    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
     "autoprefixer": "^10.4.19",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "eslint-config-next": "14.2.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
+    "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   }
 }

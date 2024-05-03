@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import userConfig from "./user.config";
+import userConfig from "../config/user.config";
 import "linkfolio/dist/assets/globals.css";
 
 const roboto = Roboto({
