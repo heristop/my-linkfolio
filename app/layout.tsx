@@ -1,10 +1,10 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Comic_Neue } from "next/font/google";
+import { Lora } from "next/font/google";
 import userConfig from "../config/user.config";
 import "linkfolio/dist/assets/globals.css";
 
-const font = Comic_Neue({
+const font = Lora({
   weight: "400",
   subsets: ["latin"],
 });
