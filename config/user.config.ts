@@ -12,6 +12,7 @@ const userConfig = {
   alias: "@heristop",
   metaTitle: "Alexandre Mogère",
   metaDescription: "Alexandre Mogère's Links",
+  enableTypingAlias: true,
   socialNetworks: [
     {
       url: "https://github.com/heristop",
