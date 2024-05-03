@@ -1,10 +1,10 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Comic_Neue } from "next/font/google";
 import userConfig from "../config/user.config";
 import "linkfolio/dist/assets/globals.css";
 
-const roboto = Roboto({
+const font = Comic_Neue({
   weight: "400",
   subsets: ["latin"],
 });
@@ -55,7 +55,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body className={roboto.className}>{children}</body>
+      <body className={font.className}>{children}</body>
     </html>
   );
 }

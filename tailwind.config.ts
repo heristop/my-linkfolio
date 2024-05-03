@@ -8,14 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        roboto: ["Roboto", "sans-serif"],
-      },
       colors: {
         primary: "#2F5D62",
         secondary: "#5E8B7E",
-        "background-start": "#2F5D62",
-        "background-end": "#A7C4BC",
+        "background-start": "#D9E2E1",
+        "background-end": "#F2F7F6",
       },
       backgroundImage: ({ theme }) => ({
         "gradient-background": `linear-gradient(
