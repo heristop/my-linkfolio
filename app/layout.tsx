@@ -7,6 +7,7 @@ import "linkfolio/dist/assets/globals.css";
 const font = Lora({
   weight: "400",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
