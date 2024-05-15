@@ -61,7 +61,7 @@ const userConfig = {
       url: "https://gutenku.xyz",
       iconSrc: "/assets/gutenku.webp",
       title: "GutenKu",
-      description: "Haiku generator using AI",
+      description: "AI Haiku Generator",
       group: "project",
     },
     {

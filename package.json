@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "linkfolio": "^0.5.0"
+    "linkfolio": "^0.6.0"
   },
   "peerDependencies": {
     "next": "^14.2.1",

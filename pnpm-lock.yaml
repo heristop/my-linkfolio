@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       linkfolio:
-        specifier: ^0.5.0
-        version: 0.5.0(next@14.2.3(@babel/core@7.24.5)(@playwright/test@1.44.0)(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(sharp@0.33.3)(tailwindcss@3.4.3)
+        specifier: ^0.6.0
+        version: 0.6.0(next@14.2.3(@babel/core@7.24.5)(@playwright/test@1.44.0)(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(sharp@0.33.3)(tailwindcss@3.4.3)
       next:
         specifier: ^14.2.1
         version: 14.2.3(@babel/core@7.24.5)(@playwright/test@1.44.0)(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
@@ -1792,8 +1792,8 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  linkfolio@0.5.0:
-    resolution: {integrity: sha512-wU0o21nwIAgK28thgpta+7kJe3IXUS7lP/g9Ui3W4RKk9pb5SjCj+XDMC8138xwXvdD4BDI27Xy+uKXUAd2Hww==}
+  linkfolio@0.6.0:
+    resolution: {integrity: sha512-fGNgIThKRAOQSO8Ui7EqBp9eD3Se1wUOHu9POjcjvNrpm3X5hRXS7Fnzqx0AhsYu0t3CC8rkrDEeLFJdspDdUA==}
     peerDependencies:
       next: ^14.2.1
       react: ^18.2.0
@@ -4343,7 +4343,7 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  linkfolio@0.5.0(next@14.2.3(@babel/core@7.24.5)(@playwright/test@1.44.0)(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(sharp@0.33.3)(tailwindcss@3.4.3):
+  linkfolio@0.6.0(next@14.2.3(@babel/core@7.24.5)(@playwright/test@1.44.0)(react-dom@18.2.0(react@18.3.1))(react@18.3.1))(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(sharp@0.33.3)(tailwindcss@3.4.3):
     dependencies:
       next: 14.2.3(@babel/core@7.24.5)(@playwright/test@1.44.0)(react-dom@18.2.0(react@18.3.1))(react@18.3.1)
       react: 18.3.1
