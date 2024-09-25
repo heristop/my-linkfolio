@@ -1,10 +1,10 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Lora } from "next/font/google";
+import { Bitter } from "next/font/google";
 import userConfig from "../config/user.config";
 import "linkfolio/dist/assets/globals.css";
 
-const font = Lora({
+const font = Bitter({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
@@ -48,11 +48,11 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content={userConfig.metaTitle ?? "LinkFolio"}
+          content={userConfig.metaTitle ?? "Linkfolio"}
         />
         <meta
           property="og:description"
-          content={userConfig.metaDescription ?? "LinkFolio"}
+          content={userConfig.metaDescription ?? "Linkfolio"}
         />
       </head>
 
