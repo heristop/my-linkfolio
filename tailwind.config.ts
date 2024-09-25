@@ -9,16 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#2F5D62",
-        secondary: "#5E8B7E",
-        "background-start": "#D9E2E1",
-        "background-end": "#F2F7F6",
+        primary: "#937FA3",
+        secondary: "#A56B8C",
+        background: {
+          start: "#E8EFF7",
+          end: "#EDE8F7",
+        },
       },
       backgroundImage: ({ theme }) => ({
         "gradient-background": `linear-gradient(
           to bottom, 
-          ${theme("colors.background-start")}, 
-          ${theme("colors.background-end")}
+          ${theme("colors.background.start")}, 
+          ${theme("colors.background.end")}
         )`,
       }),
     },

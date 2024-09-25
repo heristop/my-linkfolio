@@ -1,12 +1,12 @@
-# LinkFolio Page
+# Linkfolio Page
 
-![LinkFolio](https://github.com/heristop/linkfolio/blob/main/docs/linkfolio.png?raw=true)
+![Linkfolio](https://github.com/heristop/linkfolio/blob/main/docs/linkfolio.png?raw=true)
 
 A sleek, minimalist landing page that connects your audience to all of your online presences.
 
-**Want your own LinkFolio page? Simply install it from this template: [🔗LinkFolio](https://github.com/heristop/linkfolio).**
+**Want your own Linkfolio page? Simply install it from this template: [🔗Linkflio](https://github.com/heristop/linkfolio).**
 
-## Features:
+## Features
 
 🚀 Built with Next.js for optimal performance
 
