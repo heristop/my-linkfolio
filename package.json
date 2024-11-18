@@ -15,7 +15,7 @@
     "react-dom": "19.0.0-rc-f994737d14-20240522"
   },
   "devDependencies": {
-    "@babel/plugin-transform-nullish-coalescing-operator": "^7.24.7",
+    "@babel/plugin-transform-nullish-coalescing-operator": "^7.25.9",
     "@playwright/test": "^1.48.2",
     "@swc/core": "^1.7.28",
     "@types/node": "^22.7.0",
