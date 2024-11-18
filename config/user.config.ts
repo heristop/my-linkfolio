@@ -51,13 +51,14 @@ const userConfig = {
       description: "Tech Monitoring",
       group: "socialnetwork",
     },
-    /*{
+    {
       url: "https://www.threads.net/@heristop",
       iconSrc: threadsIcon,
       title: "Threads",
       description: "Snapshots",
       group: "socialnetwork",
-    },*/
+      hidden: true,
+    },
     {
       url: "https://heristop.github.io",
       iconSrc: "/assets/zazen.webp",
