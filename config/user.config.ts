@@ -1,4 +1,5 @@
 import {
+  blueSkyIcon,
   githubIcon,
   instagramIcon,
   linkedinIcon,
@@ -37,19 +38,26 @@ const userConfig = {
       group: "socialnetwork",
     },
     {
-      url: "https://x.com/heristop",
-      iconSrc: xIcon,
-      title: "Twitter / X",
-      description: "Tech Monitoring",
+      url: "https://bsky.app/profile/heristop.bsky.social",
+      iconSrc: blueSkyIcon,
+      title: "BlueSky",
+      description: "Tech watch & insights",
       group: "socialnetwork",
     },
     {
+      url: "https://x.com/heristop",
+      iconSrc: xIcon,
+      title: "X",
+      description: "Tech Monitoring",
+      group: "socialnetwork",
+    },
+    /*{
       url: "https://www.threads.net/@heristop",
       iconSrc: threadsIcon,
       title: "Threads",
       description: "Snapshots",
       group: "socialnetwork",
-    },
+    },*/
     {
       url: "https://heristop.github.io",
       iconSrc: "/assets/zazen.webp",
