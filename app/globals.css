@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import "linkfolio/dist/assets/globals.css";
+
+@source "../node_modules/linkfolio/dist";
+
+@theme {
+  --color-primary: #937FA3;
+  --color-secondary: #A56B8C;
+  --color-background-start: #E8EFF7;
+  --color-background-end: #EDE8F7;
+
+  --background-image-gradient-background: linear-gradient(
+    to bottom,
+    var(--color-background-start),
+    var(--color-background-end)
+  );
+}

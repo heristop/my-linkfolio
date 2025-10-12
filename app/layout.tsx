@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { Bitter } from "next/font/google";
 import userConfig from "../config/user.config";
-import "linkfolio/dist/assets/globals.css";
+import "./globals.css";
 
 const font = Bitter({
   weight: "400",
