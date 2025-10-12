@@ -1,3 +1,4 @@
+import { UserConfig } from "./user.types";
 import {
   blueSkyIcon,
   githubIcon,
@@ -7,7 +8,7 @@ import {
   xIcon,
 } from "linkfolio/dist/assets";
 
-const userConfig = {
+const userConfig: UserConfig = {
   avatarSrc: "/assets/avatar.webp",
   avatarAlt: "Avatar",
   fullName: "Alexandre Mogère",
