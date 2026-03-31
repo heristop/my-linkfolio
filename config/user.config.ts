@@ -4,7 +4,6 @@ import {
   githubIcon,
   instagramIcon,
   linkedinIcon,
-  threadsIcon,
   xIcon,
 } from "linkfolio/dist/assets";
 
@@ -53,14 +52,6 @@ const userConfig: UserConfig = {
       group: "socialnetwork",
     },
     {
-      url: "https://www.threads.net/@heristop",
-      iconSrc: threadsIcon,
-      title: "Threads",
-      description: "Snapshots",
-      group: "socialnetwork",
-      hidden: true,
-    },
-    {
       url: "https://heristop.github.io",
       iconSrc: "/assets/zazen.webp",
       title: "Zazen Code",
@@ -75,18 +66,17 @@ const userConfig: UserConfig = {
       group: "project",
     },
     {
-      url: "https://linkfolio-demo.vercel.app",
-      iconSrc: "/assets/linkfolio.webp",
-      title: "Linkfolio",
-      description: "Portfolio Demo",
-      group: "project",
-      hidden: true,
-    },
-    {
       url: "https://pix-me.studio",
       iconSrc: "/assets/pix-me.webp",
       title: "Pix Me!",
       description: "AI Avatar Generator",
+      group: "project",
+    },
+    {
+      url: "https://chatodo.app",
+      iconSrc: "/assets/chatodo.webp",
+      title: "ChaTodo",
+      description: "ADHD-Friendly To-Do List & Task Manager",
       group: "project",
     },
     {
@@ -95,6 +85,14 @@ const userConfig: UserConfig = {
       title: "Clover Map",
       description: "Project Management Tool",
       group: "project",
+    },
+    {
+      url: "https://linkfolio-demo.vercel.app",
+      iconSrc: "/assets/linkfolio.webp",
+      title: "Linkfolio",
+      description: "Portfolio Demo",
+      group: "project",
+      hidden: true,
     },
   ],
 };
