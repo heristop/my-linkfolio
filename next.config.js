@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    qualities: [100],
+    qualities: [90, 100],
   },
+  transpilePackages: ["linkfolio"],
 };
 
 module.exports = nextConfig;
