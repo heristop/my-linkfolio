@@ -3,79 +3,84 @@
 @source "../node_modules/linkfolio/dist";
 
 @theme {
-  --color-primary: #937fa3;
+  --color-primary: #6b5278;
   --color-secondary: #a56b8c;
-  --color-background-start: #e8eff7;
-  --color-background-end: #ede8f7;
+  --color-background-start: #e6dff0;
+  --color-background-end: #f0eaf5;
 
   --background-image-gradient-background: linear-gradient(
-    to bottom,
+    160deg,
     var(--color-background-start),
     var(--color-background-end)
   );
 
   /* Card */
-  --lf-card-bg: transparent;
-  --lf-card-radius: 1.5rem;
-  --lf-card-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.6) inset, 0 8px 40px -10px rgba(147, 127, 163, 0.2);
-  --lf-card-border: 1px solid rgba(255, 255, 255, 0.45);
+  --lf-card-bg: #fcfbfd;
+  --lf-card-radius: 1.25rem;
+  --lf-card-shadow: 0 2px 4px rgba(107, 82, 120, 0.04), 0 8px 32px -8px rgba(107, 82, 120, 0.1);
+  --lf-card-border: 1px solid rgba(107, 82, 120, 0.06);
   --lf-card-padding-x: 2.5rem;
   --lf-card-padding-y: 2.5rem;
-  --lf-card-backdrop: blur(24px) saturate(1.3);
 
   /* Profile */
-  --lf-profile-margin-bottom: 1.25rem;
-  --lf-name-font-size: 2rem;
-  --lf-name-font-weight: 700;
-  --lf-name-color: #4d3d5c;
+  --lf-profile-margin-bottom: 1.5rem;
+  --lf-name-font-size: 2.25rem;
+  --lf-name-font-weight: 400;
+  --lf-name-color: #3d2e4a;
   --lf-alias-color: var(--color-secondary);
-  --lf-accent-line-color: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-  --lf-accent-line-width: 4rem;
-  --lf-accent-line-opacity: 0.4;
+  --lf-accent-line-color: var(--color-secondary);
+  --lf-accent-line-width: 2.5rem;
+  --lf-accent-line-opacity: 0.3;
 
-  /* Social links */
+  /* Links */
   --lf-links-gap-x: 0.75rem;
   --lf-links-gap-y: 0.5rem;
-  --lf-links-padding-x: 1.5rem;
+  --lf-links-padding-x: 1rem;
+
+  /* Hover */
+  --lf-network-hover-bg: rgba(107, 82, 120, 0.04);
+
+  /* Footer */
+  --lf-footer-opacity: 0.3;
 }
 
 @layer utilities {
-  /* Mesh gradient background */
-  html {
-    background:
-      radial-gradient(ellipse at 20% 20%, rgba(165, 107, 140, 0.12) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 80%, rgba(147, 127, 163, 0.1) 0%, transparent 50%),
-      radial-gradient(ellipse at 60% 10%, rgba(200, 170, 210, 0.08) 0%, transparent 40%),
-      linear-gradient(to bottom, var(--color-background-start), var(--color-background-end)) !important;
-    background-attachment: fixed !important;
-  }
-
-  /* Card gradient overlay */
-  .lf-card {
-    background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.88) 0%, rgba(249, 245, 251, 0.82) 35%, rgba(250, 243, 246, 0.8) 60%, rgba(246, 244, 250, 0.85) 100%);
-  }
-
-  /* Name text shadow */
   .lf-name {
-    letter-spacing: -0.025em;
-    text-shadow: 0 1px 2px rgba(147, 127, 163, 0.08);
+    font-family: var(--font-display), Georgia, serif;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
   }
 
-  /* Social icon pills: translucent bg + hover border */
+  .lf-alias {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .lf-avatar {
+    box-shadow:
+      0 0 0 2px rgba(255, 255, 255, 0.9),
+      0 0 0 3px rgba(165, 107, 140, 0.1),
+      0 6px 20px -6px rgba(107, 82, 120, 0.2);
+  }
+
+  .lf-avatar:hover {
+    box-shadow:
+      0 0 0 2px rgba(255, 255, 255, 0.95),
+      0 0 0 3px rgba(165, 107, 140, 0.18),
+      0 10px 28px -6px rgba(107, 82, 120, 0.25);
+  }
+
   [data-group="socialnetwork"] .lf-icon-container {
-    background: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(147, 127, 163, 0.08);
-    transition: all 0.35s var(--ease-out-expo);
+    background: rgba(107, 82, 120, 0.05);
+    transition: background 0.3s var(--ease-out-expo);
   }
 
   [data-group="socialnetwork"] .network:hover .lf-icon-container {
-    border-color: rgba(165, 107, 140, 0.2);
-    background: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 2px 12px -4px rgba(165, 107, 140, 0.15);
+    background: rgba(107, 82, 120, 0.09);
   }
 
   [data-group="socialnetwork"] .lf-title {
-    color: rgba(90, 72, 104, 0.7);
+    color: rgba(61, 46, 74, 0.6);
     transition: color 0.3s var(--ease-out-expo);
   }
 
@@ -83,24 +88,22 @@
     color: var(--color-secondary);
   }
 
-  /* Project cards: themed shadows + hover lift */
   [data-group="project"] .lf-icon-container,
   [data-group="website"] .lf-icon-container {
-    box-shadow: 0 2px 16px -4px rgba(147, 127, 163, 0.18);
-    border: 1px solid rgba(147, 127, 163, 0.06);
-    transition: all 0.5s var(--ease-out-expo);
+    box-shadow: 0 2px 12px -3px rgba(107, 82, 120, 0.12);
   }
 
   [data-group="project"] .network:hover .lf-icon-container,
   [data-group="website"] .network:hover .lf-icon-container {
-    box-shadow: 0 16px 44px -10px rgba(147, 127, 163, 0.32);
-    transform: translateY(-5px) scale(1.015);
-    border-color: rgba(165, 107, 140, 0.12);
+    box-shadow: 0 12px 36px -8px rgba(107, 82, 120, 0.2);
+    transform: translateY(-4px);
   }
 
   [data-group="project"] .lf-title,
   [data-group="website"] .lf-title {
-    font-weight: 600;
+    color: #3d2e4a;
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 400;
     transition: color 0.3s var(--ease-out-expo);
   }
 
@@ -111,35 +114,39 @@
 
   [data-group="project"] .lf-description,
   [data-group="website"] .lf-description {
-    color: rgba(90, 72, 104, 0.55);
+    color: rgba(61, 46, 74, 0.5);
     font-size: 0.8rem;
   }
 
-  /* Avatar ring */
-  .lf-avatar {
-    box-shadow:
-      0 0 0 3px rgba(255, 255, 255, 0.85),
-      0 0 0 5px rgba(165, 107, 140, 0.12),
-      0 8px 28px -6px rgba(147, 127, 163, 0.3);
+  .lf-group + .lf-group::before {
+    background: linear-gradient(90deg, transparent, var(--color-secondary), transparent) !important;
+    opacity: 0.2 !important;
   }
 
-  .lf-avatar:hover {
-    box-shadow:
-      0 0 0 3px rgba(255, 255, 255, 0.95),
-      0 0 0 6px rgba(165, 107, 140, 0.2),
-      0 0 24px 2px rgba(165, 107, 140, 0.1),
-      0 16px 40px -8px rgba(147, 127, 163, 0.35);
+  .lf-accent-line {
+    border-radius: 1px;
   }
 
-  /* Footer */
-  footer {
-    background: transparent;
-    opacity: 0.35;
-    transition: opacity 0.3s var(--ease-out-expo);
-    margin-top: 0.5rem;
+  .lf-card {
+    animation: card-appear 0.6s var(--ease-out-expo) both;
   }
 
-  footer:hover {
-    opacity: 0.65;
+  @keyframes card-appear {
+    from {
+      opacity: 0;
+      transform: translateY(8px) scale(0.995);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  [data-group="socialnetwork"] .network {
+    transition: transform 0.4s var(--ease-out-expo), background-color 0.35s var(--ease-out-expo);
+  }
+
+  [data-group="socialnetwork"] .network:hover {
+    transform: translateY(-1px);
   }
 }
