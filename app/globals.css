@@ -1,17 +1,24 @@
-@import "tailwindcss";
 @import "linkfolio/dist/assets/globals.css";
 
 @source "../node_modules/linkfolio/dist";
 
 @theme {
-  --color-primary: #937FA3;
-  --color-secondary: #A56B8C;
-  --color-background-start: #E8EFF7;
-  --color-background-end: #EDE8F7;
+  --color-primary: #937fa3;
+  --color-secondary: #a56b8c;
+  --color-background-start: #e8eff7;
+  --color-background-end: #ede8f7;
 
   --background-image-gradient-background: linear-gradient(
     to bottom,
     var(--color-background-start),
     var(--color-background-end)
   );
+}
+
+@layer utilities {
+  .min-h-screen.shadow-lg.rounded-lg {
+    background-color: transparent !important;
+    background-image: linear-gradient(160deg, #fefeff 0%, #f9f5fb 35%, #faf3f6 60%, #f6f4fa 100%);
+    opacity: 0.88;
+  }
 }

@@ -10,12 +10,14 @@ export interface SocialNetwork {
 }
 
 export interface UserConfig {
-  avatarSrc: string;
-  avatarAlt: string;
-  fullName: string;
-  alias: string;
-  metaTitle: string;
-  metaDescription: string;
-  enableTypingAlias: boolean;
-  socialNetworks: SocialNetwork[];
+  avatarSrc?: string | StaticImageData;
+  avatarAlt?: string;
+  avatarSize?: number;
+  fullName?: string;
+  alias?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  themeColor?: string;
+  enableTypingAlias?: boolean;
+  socialNetworks?: SocialNetwork[];
 }
