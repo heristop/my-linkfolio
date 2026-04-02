@@ -1,13 +1,20 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Bitter } from "next/font/google";
+import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import userConfig from "../config/user.config";
 import "./globals.css";
 
-const font = Bitter({
+const body = DM_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
+});
+
+const display = DM_Serif_Display({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-display",
 });
 
 export const metadata: Metadata = {
@@ -56,7 +63,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body className={font.className}>{children}</body>
+      <body className={`${body.variable} ${display.variable} ${body.className}`}>{children}</body>
     </html>
   );
 }
