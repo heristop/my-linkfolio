@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import { ThemeProvider } from "linkfolio";
 import userConfig from "../config/user.config";
 import "./globals.css";
 
@@ -59,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
@@ -67,7 +68,9 @@ export default function RootLayout({
         <meta name="theme-color" content="#2f5d62" />
       </head>
 
-      <body className={`${body.variable} ${display.variable} ${body.className}`}>{children}</body>
+      <body className={`${body.variable} ${display.variable} ${body.className}`}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
