@@ -15,6 +15,22 @@ const userConfig: UserConfig = {
   metaTitle: "Alexandre Mogère",
   metaDescription: "Alexandre Mogère's Links",
   enableTypingAlias: true,
+  darkTheme: {
+    "color-primary": "#c8a8d4",
+    "color-secondary": "#d4a0be",
+    "color-background-start": "#1a1424",
+    "color-background-end": "#1e1829",
+    "lf-card-bg": "#261e30",
+    "lf-card-shadow":
+      "0 2px 4px rgba(0,0,0,0.2), 0 8px 32px -8px rgba(0,0,0,0.4)",
+    "lf-card-border": "1px solid rgba(200,168,212,0.08)",
+    "lf-name-color": "#e0d0ea",
+    "lf-alias-color": "#d4a0be",
+    "lf-network-hover-bg": "rgba(200,168,212,0.06)",
+    "lf-accent-line-color": "#d4a0be",
+    "lf-accent-line-opacity": "0.5",
+    "lf-button-opacity": "0.8",
+  },
   socialNetworks: [
     {
       url: "https://github.com/heristop",

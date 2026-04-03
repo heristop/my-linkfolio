@@ -70,6 +70,20 @@
       0 10px 28px -6px rgba(107, 82, 120, 0.25);
   }
 
+  .dark .lf-avatar {
+    box-shadow:
+      0 0 0 2px rgba(38, 30, 48, 0.9),
+      0 0 0 3px rgba(200, 168, 212, 0.15),
+      0 6px 20px -6px rgba(0, 0, 0, 0.4);
+  }
+
+  .dark .lf-avatar:hover {
+    box-shadow:
+      0 0 0 2px rgba(38, 30, 48, 0.95),
+      0 0 0 3px rgba(200, 168, 212, 0.25),
+      0 10px 28px -6px rgba(0, 0, 0, 0.5);
+  }
+
   [data-group="socialnetwork"] .lf-icon-container {
     background: rgba(107, 82, 120, 0.05);
     transition: background 0.3s var(--ease-out-expo);
@@ -79,9 +93,21 @@
     background: rgba(107, 82, 120, 0.09);
   }
 
+  .dark [data-group="socialnetwork"] .lf-icon-container {
+    background: rgba(200, 168, 212, 0.06);
+  }
+
+  .dark [data-group="socialnetwork"] .network:hover .lf-icon-container {
+    background: rgba(200, 168, 212, 0.1);
+  }
+
   [data-group="socialnetwork"] .lf-title {
     color: rgba(61, 46, 74, 0.78);
     transition: color 0.3s var(--ease-out-expo);
+  }
+
+  .dark [data-group="socialnetwork"] .lf-title {
+    color: rgba(224, 208, 234, 0.7);
   }
 
   [data-group="socialnetwork"] .network:hover .lf-title {
@@ -99,12 +125,27 @@
     transform: translateY(-4px);
   }
 
+  .dark [data-group="project"] .lf-icon-container,
+  .dark [data-group="website"] .lf-icon-container {
+    box-shadow: 0 2px 12px -3px rgba(0, 0, 0, 0.3);
+  }
+
+  .dark [data-group="project"] .network:hover .lf-icon-container,
+  .dark [data-group="website"] .network:hover .lf-icon-container {
+    box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.5);
+  }
+
   [data-group="project"] .lf-title,
   [data-group="website"] .lf-title {
     color: #3d2e4a;
     font-family: var(--font-display), Georgia, serif;
     font-weight: 400;
     transition: color 0.3s var(--ease-out-expo);
+  }
+
+  .dark [data-group="project"] .lf-title,
+  .dark [data-group="website"] .lf-title {
+    color: #e0d0ea;
   }
 
   [data-group="project"] .network:hover .lf-title,
@@ -116,6 +157,11 @@
   [data-group="website"] .lf-description {
     color: rgba(61, 46, 74, 0.7);
     font-size: 0.8rem;
+  }
+
+  .dark [data-group="project"] .lf-description,
+  .dark [data-group="website"] .lf-description {
+    color: rgba(224, 208, 234, 0.6);
   }
 
   .lf-group + .lf-group::before {
@@ -131,9 +177,18 @@
     color: var(--color-primary);
   }
 
+  .dark .lf-footer {
+    color: rgba(200, 168, 212, 0.5);
+  }
+
+  .dark .lf-footer:hover {
+    color: var(--color-primary);
+  }
+
   .lf-accent-line {
     border-radius: 1px;
   }
+
 
   .lf-card {
     animation: card-appear 0.6s var(--ease-out-expo) both;
