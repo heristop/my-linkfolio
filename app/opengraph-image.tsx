@@ -42,6 +42,7 @@ export default function OGImage() {
         >
           <img
             src={avatarSrc}
+            alt=""
             width={120}
             height={120}
             style={{
