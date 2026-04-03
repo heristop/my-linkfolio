@@ -4,7 +4,7 @@
 
 @theme {
   --color-primary: #6b5278;
-  --color-secondary: #a56b8c;
+  --color-secondary: #905578;
   --color-background-start: #e6dff0;
   --color-background-end: #f0eaf5;
 
@@ -41,7 +41,7 @@
   --lf-network-hover-bg: rgba(107, 82, 120, 0.04);
 
   /* Footer */
-  --lf-footer-opacity: 0.3;
+  --lf-footer-opacity: 0.8;
 }
 
 @layer utilities {
@@ -80,7 +80,7 @@
   }
 
   [data-group="socialnetwork"] .lf-title {
-    color: rgba(61, 46, 74, 0.6);
+    color: rgba(61, 46, 74, 0.78);
     transition: color 0.3s var(--ease-out-expo);
   }
 
@@ -114,7 +114,7 @@
 
   [data-group="project"] .lf-description,
   [data-group="website"] .lf-description {
-    color: rgba(61, 46, 74, 0.5);
+    color: rgba(61, 46, 74, 0.7);
     font-size: 0.8rem;
   }
 
