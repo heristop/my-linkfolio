@@ -41,7 +41,7 @@
   --lf-network-hover-bg: rgba(107, 82, 120, 0.04);
 
   /* Footer */
-  --lf-footer-opacity: 0.8;
+  --lf-footer-opacity: 1;
 }
 
 @layer utilities {
@@ -121,6 +121,14 @@
   .lf-group + .lf-group::before {
     background: linear-gradient(90deg, transparent, var(--color-secondary), transparent) !important;
     opacity: 0.2 !important;
+  }
+
+  .lf-footer {
+    color: #887493;
+  }
+
+  .lf-footer:hover {
+    color: var(--color-primary);
   }
 
   .lf-accent-line {
