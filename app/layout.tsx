@@ -17,9 +17,55 @@ const display = DM_Serif_Display({
   variable: "--font-display",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://heristop.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: userConfig.metaTitle,
   description: userConfig.metaDescription,
+  openGraph: {
+    type: "website",
+    title: userConfig.metaTitle ?? "Linkfolio",
+    description: userConfig.metaDescription ?? "Linkfolio",
+    siteName: userConfig.fullName,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: userConfig.metaTitle ?? "Linkfolio",
+    description: userConfig.metaDescription ?? "Linkfolio",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: userConfig.fullName,
+    alternateName: userConfig.alias?.replace("@", ""),
+    description: userConfig.metaDescription,
+    url: siteUrl,
+    sameAs: userConfig.socialNetworks
+      ?.filter((n) => !n.hidden)
+      .map((n) => n.url),
+  },
 };
 
 export default function RootLayout({
@@ -30,36 +76,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#2f5d62" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content={userConfig.metaTitle ?? "Linkfolio"}
-        />
-        <meta
-          property="og:description"
-          content={userConfig.metaDescription ?? "Linkfolio"}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
 
