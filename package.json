@@ -20,7 +20,7 @@
     "@babel/plugin-transform-nullish-coalescing-operator": "^7.28.6",
     "@playwright/test": "^1.59.1",
     "@swc/core": "^1.15.21",
-    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/postcss": "^4.2.4",
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
