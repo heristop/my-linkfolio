@@ -19,7 +19,7 @@
   "devDependencies": {
     "@babel/plugin-transform-nullish-coalescing-operator": "^7.28.6",
     "@playwright/test": "^1.59.1",
-    "@swc/core": "^1.15.21",
+    "@swc/core": "^1.15.32",
     "@tailwindcss/postcss": "^4.2.2",
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
