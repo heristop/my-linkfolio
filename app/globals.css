@@ -1,6 +1,8 @@
 @import "linkfolio/dist/assets/globals.css";
 
-@source "../node_modules/linkfolio/dist";
+/* Scan only the ESM bundle: the sibling index.cjs holds the same class list, so
+   scanning the whole directory extracts every token twice for identical CSS. */
+@source "../node_modules/linkfolio/dist/index.mjs";
 
 @theme {
   --color-primary: #6b5278;
@@ -17,7 +19,8 @@
   /* Card */
   --lf-card-bg: #fcfbfd;
   --lf-card-radius: 1.25rem;
-  --lf-card-shadow: 0 2px 4px rgba(107, 82, 120, 0.04), 0 8px 32px -8px rgba(107, 82, 120, 0.1);
+  --lf-card-shadow:
+    0 2px 4px rgba(107, 82, 120, 0.04), 0 8px 32px -8px rgba(107, 82, 120, 0.1);
   --lf-card-border: 1px solid rgba(107, 82, 120, 0.06);
   --lf-card-padding-x: 2.5rem;
   --lf-card-padding-y: 2.5rem;
@@ -27,6 +30,7 @@
   --lf-name-font-size: 2.25rem;
   --lf-name-font-weight: 400;
   --lf-name-color: #3d2e4a;
+  --lf-name-font-family: var(--font-display), Georgia, serif;
   --lf-alias-color: var(--color-secondary);
   --lf-accent-line-color: var(--color-secondary);
   --lf-accent-line-width: 2.5rem;
@@ -42,174 +46,22 @@
 
   /* Footer */
   --lf-footer-opacity: 1;
+
+  /* Buttons — 0.6 leaves the icons at 2.7:1 on the card, below the 3:1
+     WCAG 1.4.11 minimum for UI components. 0.8 gives 4.1:1. */
+  --lf-button-opacity: 0.8;
 }
 
 @layer utilities {
-  .lf-name {
-    font-family: var(--font-display), Georgia, serif;
-    letter-spacing: -0.015em;
-    line-height: 1.2;
-  }
-
-  .lf-alias {
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-
-  .lf-avatar {
-    box-shadow:
-      0 0 0 2px rgba(255, 255, 255, 0.9),
-      0 0 0 3px rgba(165, 107, 140, 0.1),
-      0 6px 20px -6px rgba(107, 82, 120, 0.2);
-  }
-
-  .lf-avatar:hover {
-    box-shadow:
-      0 0 0 2px rgba(255, 255, 255, 0.95),
-      0 0 0 3px rgba(165, 107, 140, 0.18),
-      0 10px 28px -6px rgba(107, 82, 120, 0.25);
-  }
-
-  .dark .lf-avatar {
-    box-shadow:
-      0 0 0 2px rgba(38, 30, 48, 0.9),
-      0 0 0 3px rgba(200, 168, 212, 0.15),
-      0 6px 20px -6px rgba(0, 0, 0, 0.4);
-  }
-
-  .dark .lf-avatar:hover {
-    box-shadow:
-      0 0 0 2px rgba(38, 30, 48, 0.95),
-      0 0 0 3px rgba(200, 168, 212, 0.25),
-      0 10px 28px -6px rgba(0, 0, 0, 0.5);
-  }
-
-  [data-group="socialnetwork"] .lf-icon-container {
-    background: rgba(107, 82, 120, 0.05);
-    transition: background 0.3s var(--ease-out-expo);
-  }
-
-  [data-group="socialnetwork"] .network:hover .lf-icon-container {
-    background: rgba(107, 82, 120, 0.09);
-  }
-
-  .dark [data-group="socialnetwork"] .lf-icon-container {
-    background: rgba(200, 168, 212, 0.06);
-  }
-
-  .dark [data-group="socialnetwork"] .network:hover .lf-icon-container {
-    background: rgba(200, 168, 212, 0.1);
-  }
-
-  [data-group="socialnetwork"] .lf-title {
-    color: rgba(61, 46, 74, 0.78);
-    transition: color 0.3s var(--ease-out-expo);
-  }
-
-  .dark [data-group="socialnetwork"] .lf-title {
-    color: rgba(224, 208, 234, 0.7);
-  }
-
-  [data-group="socialnetwork"] .network:hover .lf-title {
-    color: var(--color-secondary);
-  }
-
-  [data-group="project"] .lf-icon-container,
-  [data-group="website"] .lf-icon-container {
-    box-shadow: 0 2px 12px -3px rgba(107, 82, 120, 0.12);
-  }
-
-  [data-group="project"] .network:hover .lf-icon-container,
-  [data-group="website"] .network:hover .lf-icon-container {
-    box-shadow: 0 12px 36px -8px rgba(107, 82, 120, 0.2);
-    transform: translateY(-4px);
-  }
-
-  .dark [data-group="project"] .lf-icon-container,
-  .dark [data-group="website"] .lf-icon-container {
-    box-shadow: 0 2px 12px -3px rgba(0, 0, 0, 0.3);
-  }
-
-  .dark [data-group="project"] .network:hover .lf-icon-container,
-  .dark [data-group="website"] .network:hover .lf-icon-container {
-    box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.5);
-  }
-
+  /* The only overrides left. Everything else this file used to restate —
+     icon backgrounds, title and description colours, box shadows, the footer,
+     the accent line — is close enough to what the `@theme` tokens above
+     already produce that carrying a second copy was not worth the drift.
+     The display face is the exception: no token exposes a font family, so
+     without these two rules the serif headings fall back to the mono body. */
   [data-group="project"] .lf-title,
   [data-group="website"] .lf-title {
-    color: #3d2e4a;
     font-family: var(--font-display), Georgia, serif;
     font-weight: 400;
-    transition: color 0.3s var(--ease-out-expo);
-  }
-
-  .dark [data-group="project"] .lf-title,
-  .dark [data-group="website"] .lf-title {
-    color: #e0d0ea;
-  }
-
-  [data-group="project"] .network:hover .lf-title,
-  [data-group="website"] .network:hover .lf-title {
-    color: var(--color-secondary);
-  }
-
-  [data-group="project"] .lf-description,
-  [data-group="website"] .lf-description {
-    color: rgba(61, 46, 74, 0.7);
-    font-size: 0.8rem;
-  }
-
-  .dark [data-group="project"] .lf-description,
-  .dark [data-group="website"] .lf-description {
-    color: rgba(224, 208, 234, 0.6);
-  }
-
-  .lf-group + .lf-group::before {
-    background: linear-gradient(90deg, transparent, var(--color-secondary), transparent) !important;
-    opacity: 0.2 !important;
-  }
-
-  .lf-footer {
-    color: #7b6886;
-  }
-
-  .lf-footer:hover {
-    color: var(--color-primary);
-  }
-
-  .dark .lf-footer {
-    color: rgba(200, 168, 212, 0.5);
-  }
-
-  .dark .lf-footer:hover {
-    color: var(--color-primary);
-  }
-
-  .lf-accent-line {
-    border-radius: 1px;
-  }
-
-
-  .lf-card {
-    animation: card-appear 0.6s var(--ease-out-expo) both;
-  }
-
-  @keyframes card-appear {
-    from {
-      opacity: 0;
-      transform: translateY(8px) scale(0.995);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  [data-group="socialnetwork"] .network {
-    transition: transform 0.4s var(--ease-out-expo), background-color 0.35s var(--ease-out-expo);
-  }
-
-  [data-group="socialnetwork"] .network:hover {
-    transform: translateY(-1px);
   }
 }
