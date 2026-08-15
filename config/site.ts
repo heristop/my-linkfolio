@@ -1,20 +1,36 @@
 const DEFAULT_SITE_URL = "https://heristop.vercel.app";
 
 /**
- * Absolute origin of the deployed site, without a trailing slash.
+ * Absolute base URL of the deployed site, without a trailing slash. Not
+ * necessarily a bare origin: a base path is preserved, so a fork served from
+ * https://user.github.io/my-linkfolio keeps its /my-linkfolio segment.
  *
- * Uses `||` rather than `??` so a defined-but-empty env var (a blank value in
- * the Vercel dashboard, or `NEXT_PUBLIC_SITE_URL=` in a .env file) falls back
- * instead of producing `new URL("")`, which throws and fails the build.
- * A value without a scheme is rejected for the same reason.
+ * An unset, blank, or unparseable NEXT_PUBLIC_SITE_URL (a cleared value in the
+ * Vercel dashboard, `NEXT_PUBLIC_SITE_URL=` in a .env file, or a value missing
+ * its scheme) falls back to the default. Without that guard the bad value
+ * reaches `new URL()` at module scope, which throws and fails the build.
  */
 function resolveSiteUrl(): string {
-  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim() || DEFAULT_SITE_URL;
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+
+  if (!raw) {
+    return DEFAULT_SITE_URL;
+  }
 
   try {
-    return new URL(raw).origin;
+    const url = new URL(raw);
+
+    // Keep any base path (a fork served from https://user.github.io/my-linkfolio
+    // needs it in every canonical and sitemap URL); strip only trailing slashes.
+    return `${url.origin}${url.pathname.replace(/\/+$/, "")}`;
   } catch {
-    return new URL(DEFAULT_SITE_URL).origin;
+    // Falling back silently would hand this fork's canonical and sitemap URLs to
+    // the original author's domain, so make the misconfiguration visible.
+    console.warn(
+      `[site] Ignoring invalid NEXT_PUBLIC_SITE_URL ${JSON.stringify(raw)} and falling back to ${DEFAULT_SITE_URL}. Include the scheme, e.g. https://example.com`,
+    );
+
+    return DEFAULT_SITE_URL;
   }
 }
 

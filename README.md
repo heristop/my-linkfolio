@@ -28,7 +28,7 @@ Visit http://localhost:3000 to see the app running.
 
 ## Configuration
 
-Edit `app/user.config.ts`:
+Edit `config/user.config.ts`:
 
 ```js
 const userConfig = {
