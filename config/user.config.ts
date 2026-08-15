@@ -1,4 +1,4 @@
-import { UserConfig } from "./user.types";
+import type { UserConfig } from "./user.types";
 import {
   blueSkyIcon,
   githubIcon,
@@ -7,13 +7,35 @@ import {
   xIcon,
 } from "linkfolio/dist/assets";
 
+/**
+ * GA4 measurement id, read from the environment rather than written here.
+ *
+ * `NEXT_PUBLIC_` is required: the value has to reach the browser, and this
+ * module is imported by client components as well as by the server. Leave it
+ * unset — locally, or in any preview deploy — and `<Analytics>` loads no
+ * third-party script at all.
+ */
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
 const userConfig: UserConfig = {
+  ...(gaId && { analytics: { provider: "ga" as const, id: gaId } }),
   avatarSrc: "/assets/avatar.webp",
   avatarAlt: "Avatar",
   fullName: "Alexandre Mogère",
   alias: "@heristop",
-  metaTitle: "Alexandre Mogère",
-  metaDescription: "Alexandre Mogère's Links",
+  siteUrl: "https://heristop.vercel.app",
+  jobTitle: "Software Engineer",
+  lang: "en",
+  locale: "en_US",
+  metaTitle: "Alexandre Mogère — Software Engineer & Indie Maker",
+  metaDescription:
+    "Software engineer and indie maker. Building GutenKu, ChaTodo, Pix Me! and other side projects. Find my code, writing and apps in one place.",
+  keywords: [
+    "Alexandre Mogère",
+    "heristop",
+    "software engineer",
+    "indie maker",
+  ],
   enableTypingAlias: true,
   darkTheme: {
     "color-primary": "#c8a8d4",
@@ -86,6 +108,13 @@ const userConfig: UserConfig = {
       iconSrc: "/assets/pix-me.webp",
       title: "Pix Me!",
       description: "AI Avatar Generator",
+      group: "project",
+    },
+    {
+      url: "https://leclap.pages.dev",
+      iconSrc: "/assets/leclap.webp",
+      title: "LeClap",
+      description: "On-Device Video Composer",
       group: "project",
     },
     {
