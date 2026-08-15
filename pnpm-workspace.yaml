@@ -1,0 +1,18 @@
+# pnpm 9 — which Vercel still selects — treats this file as a workspace
+# declaration and fails the install with "packages field missing or empty"
+# unless this key is present.
+packages:
+  - .
+
+minimumReleaseAgeExclude:
+  - "@next/env@16.3.1"
+  - "@next/swc-darwin-arm64@16.3.1"
+  - "@next/swc-darwin-x64@16.3.1"
+  - "@next/swc-linux-arm64-gnu@16.3.1"
+  - "@next/swc-linux-arm64-musl@16.3.1"
+  - "@next/swc-linux-x64-gnu@16.3.1"
+  - "@next/swc-linux-x64-musl@16.3.1"
+  - "@next/swc-win32-arm64-msvc@16.3.1"
+  - "@next/swc-win32-x64-msvc@16.3.1"
+  - next@16.3.1
+  - linkfolio@3.0.0 || 3.1.0
