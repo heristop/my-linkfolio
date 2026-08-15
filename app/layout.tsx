@@ -1,14 +1,15 @@
 import React from "react";
-import type { Metadata } from "next";
-import { DM_Sans, DM_Serif_Display } from "next/font/google";
-import { ThemeProvider } from "linkfolio";
-import userConfig from "../config/user.config";
+import type { Metadata, Viewport } from "next";
+import { DM_Mono, DM_Serif_Display } from "next/font/google";
+import { Analytics, ThemeProvider } from "linkfolio";
+import userConfig from "~/user.config";
+import { siteUrl } from "~/site";
 import "./globals.css";
 
-const body = DM_Sans({
+const body = DM_Mono({
+  weight: "400",
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-body",
 });
 
 const display = DM_Serif_Display({
@@ -18,19 +19,25 @@ const display = DM_Serif_Display({
   variable: "--font-display",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://heristop.vercel.app";
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#e6dff0" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1424" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: userConfig.metaTitle,
   description: userConfig.metaDescription,
+  ...(userConfig.keywords ? { keywords: userConfig.keywords } : {}),
   openGraph: {
     type: "website",
     title: userConfig.metaTitle ?? "Linkfolio",
     description: userConfig.metaDescription ?? "Linkfolio",
+    url: siteUrl,
     siteName: userConfig.fullName,
-    locale: "en_US",
+    locale: userConfig.locale ?? "en_US",
   },
   twitter: {
     card: "summary_large_image",
@@ -44,6 +51,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  manifest: "/site.webmanifest",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -60,16 +68,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#2f5d62" />
-      </head>
-
-      <body className={`${body.variable} ${display.variable} ${body.className}`}>
+    // `display.variable` sits on <html>, not <body>: the theme declares
+    // --lf-name-font-family on :root, and a var() inside a custom property is
+    // substituted where it is declared. With the font variable one level
+    // lower the lookup fails there and the whole declaration goes invalid.
+    <html
+      lang={userConfig.lang ?? "en"}
+      className={display.variable}
+      suppressHydrationWarning
+    >
+      <body className={body.className}>
         <ThemeProvider>{children}</ThemeProvider>
+        <Analytics config={userConfig.analytics} />
       </body>
     </html>
   );
