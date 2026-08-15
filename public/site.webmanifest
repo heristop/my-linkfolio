@@ -1,6 +1,9 @@
 {
+  "id": "/",
   "name": "Alexandre Mogère",
   "short_name": "Linkfolio",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -11,9 +14,15 @@
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#e6dff0",
+  "background_color": "#e6dff0",
   "display": "standalone"
 }
