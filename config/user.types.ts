@@ -1,42 +1,13 @@
-import type { StaticImageData } from "next/image";
+import type { SocialNetworkType, ThemeColors, UserConfigType } from "linkfolio";
 
-export interface SocialNetwork {
-  url: string;
-  iconSrc: StaticImageData | string;
-  title: string;
-  description: string;
-  group: string;
-  hidden?: boolean;
-}
+export type { ThemeColors };
 
-export type ThemeColors = {
-  "color-primary"?: string;
-  "color-secondary"?: string;
-  "color-background-start"?: string;
-  "color-background-end"?: string;
-  "lf-card-bg"?: string;
-  "lf-card-shadow"?: string;
-  "lf-card-border"?: string;
-  "lf-name-color"?: string;
-  "lf-alias-color"?: string;
-  "lf-network-hover-bg"?: string;
-  "lf-description-color"?: string;
-  "lf-accent-line-color"?: string;
-  "lf-accent-line-opacity"?: string;
-  "lf-button-opacity"?: string;
-};
-
-export interface UserConfig {
-  avatarSrc?: string | StaticImageData;
-  avatarAlt?: string;
-  avatarSize?: number;
-  fullName?: string;
-  alias?: string;
-  metaTitle?: string;
-  metaDescription?: string;
-  themeColor?: string;
-  theme?: ThemeColors;
-  darkTheme?: ThemeColors;
-  enableTypingAlias?: boolean;
-  socialNetworks?: SocialNetwork[];
-}
+/**
+ * Re-exported from the package rather than restated here. This file used to
+ * hand-maintain a copy of the config shape, which meant every option the
+ * library gained — `analytics` most recently — was invisible until someone
+ * remembered to mirror it. Linkfolio 3.0.0 exports the real types, so the
+ * copy is no longer worth keeping.
+ */
+export type SocialNetwork = SocialNetworkType;
+export type UserConfig = UserConfigType;
