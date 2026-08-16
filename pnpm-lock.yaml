@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       linkfolio:
-        specifier: ^3.1.0
-        version: 3.1.0(next@16.3.1(@playwright/test@1.62.1)(@types/node@26.2.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)
+        specifier: ^3.1.1
+        version: 3.1.1(next@16.3.1(@playwright/test@1.62.1)(@types/node@26.2.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)
       next:
         specifier: ^16.3.1
         version: 16.3.1(@playwright/test@1.62.1)(@types/node@26.2.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -950,8 +950,8 @@ packages:
     resolution: {integrity: sha512-NXYBzinNrblfraPGyrbPoD19C1h9lfI/1mzgWYvXUTe414Gz/X1FD2XBZSZM7rRTrMA8JL3OtAaGifrIKhQ5yQ==}
     engines: {node: '>= 12.0.0'}
 
-  linkfolio@3.1.0:
-    resolution: {integrity: sha512-a3mEXMO+p0lX3/Ye27K33iERXiQE6hw+6tUpCDYMdylbhYt1shLYnqNJi4g1/GIMJN/IpQkStMjq7+q1kFbiPw==}
+  linkfolio@3.1.1:
+    resolution: {integrity: sha512-0ICxxWpvHBloqgI3rI3QARKY056xhTYPH7tYzUoprqC3AkuB9D/+HwYU09uc0X0kj7H71vwOUfdp5Ix5uJSRhA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       next: ^16.0.0
@@ -1742,7 +1742,7 @@ snapshots:
       lightningcss-win32-arm64-msvc: 1.32.0
       lightningcss-win32-x64-msvc: 1.32.0
 
-  linkfolio@3.1.0(next@16.3.1(@playwright/test@1.62.1)(@types/node@26.2.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3):
+  linkfolio@3.1.1(next@16.3.1(@playwright/test@1.62.1)(@types/node@26.2.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3):
     dependencies:
       next: 16.3.1(@playwright/test@1.62.1)(@types/node@26.2.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       next-themes: 0.4.6(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
