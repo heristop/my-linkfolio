@@ -17,7 +17,11 @@
   );
 
   /* Card */
-  --lf-card-bg: #fcfbfd;
+  /* Not pure white: the social tiles are banner images, and several of them
+     (LinkedIn, BlueSky) are white to their edges, so on a near-white card they
+     had no visible boundary at all. This keeps the card clearly lighter than
+     the lavender page while giving a white tile something to sit on. */
+  --lf-card-bg: #f8f4fb;
   --lf-card-radius: 1.25rem;
   --lf-card-shadow:
     0 2px 4px rgba(107, 82, 120, 0.04), 0 8px 32px -8px rgba(107, 82, 120, 0.1);
