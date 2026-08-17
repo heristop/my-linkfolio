@@ -109,7 +109,7 @@ const userConfig: UserConfig = {
     {
       url: "https://gutenku.xyz",
       iconSrc: "/assets/gutenku.webp",
-      title: "GutenVerse / GutenKu",
+      title: "GutenKu / GutenVerse",
       description: "AI Haiku Generator & Book Guessing Game",
       group: "project",
       span: "2x1",
