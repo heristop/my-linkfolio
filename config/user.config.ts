@@ -29,7 +29,7 @@ const userConfig: UserConfig = {
   locale: "en_US",
   metaTitle: "Alexandre Mogère — Software Engineer & Indie Maker",
   metaDescription:
-    "Software engineer and indie maker. Building GutenKu, ChaTodo, Pix Me! and other side projects. Find my code, writing and apps in one place.",
+    "Software engineer and indie maker. Building GutenKu, ChaTodo, Pix Me!, Pix Who? and other side projects. Find my code, writing and apps in one place.",
   keywords: [
     "Alexandre Mogère",
     "heristop",
@@ -101,8 +101,8 @@ const userConfig: UserConfig = {
     {
       url: "https://pix-me.studio",
       iconSrc: "/assets/pix-me.webp",
-      title: "Pix Me!",
-      description: "AI Avatar Generator",
+      title: "Pix Me! / Pix Who?",
+      description: "AI Avatar Generator & Daily Face Guessing Game",
       group: "project",
       span: "2x2",
     },
