@@ -60,6 +60,7 @@ const userConfig: UserConfig = {
       title: "GitHub",
       description: "Open-source Contributions",
       group: "socialnetwork",
+      span: "1x2",
     },
     {
       url: "https://www.linkedin.com/in/heristop",
@@ -95,6 +96,7 @@ const userConfig: UserConfig = {
       title: "Zazen Code",
       description: "Tech Blog",
       group: "website",
+      span: "2x2",
     },
     {
       url: "https://pix-me.studio",
@@ -102,6 +104,7 @@ const userConfig: UserConfig = {
       title: "Pix Me!",
       description: "AI Avatar Generator",
       group: "project",
+      span: "2x2",
     },
     {
       url: "https://gutenku.xyz",
@@ -109,6 +112,7 @@ const userConfig: UserConfig = {
       title: "GutenVerse / GutenKu",
       description: "AI Haiku Generator & Book Guessing Game",
       group: "project",
+      span: "2x1",
     },
     {
       url: "https://leclap.pages.dev",
@@ -116,6 +120,7 @@ const userConfig: UserConfig = {
       title: "LeClap",
       description: "On-Device Video Composer",
       group: "project",
+      span: "2x2",
     },
     {
       url: "https://chatodo.app",
@@ -123,6 +128,7 @@ const userConfig: UserConfig = {
       title: "ChaTodo",
       description: "ADHD-Friendly To-Do List & Task Manager",
       group: "project",
+      span: "2x1",
     },
     {
       url: "https://clover-map.nuxt.dev",
@@ -130,6 +136,7 @@ const userConfig: UserConfig = {
       title: "Clover Map",
       description: "Project Management Tool",
       group: "project",
+      span: "2x1",
     },
     {
       url: "https://linkfolio-demo.vercel.app",
