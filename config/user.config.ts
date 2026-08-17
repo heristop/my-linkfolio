@@ -62,24 +62,10 @@ const userConfig: UserConfig = {
       group: "socialnetwork",
     },
     {
-      url: "https://instagram.com/heristop",
-      iconSrc: instagramIcon,
-      title: "Instagram",
-      description: "Art & travel Snapshots",
-      group: "socialnetwork",
-    },
-    {
       url: "https://www.linkedin.com/in/heristop",
       iconSrc: linkedinIcon,
       title: "LinkedIn",
       description: "Professional Overview",
-      group: "socialnetwork",
-    },
-    {
-      url: "https://bsky.app/profile/heristop.bsky.social",
-      iconSrc: blueSkyIcon,
-      title: "BlueSky",
-      description: "Tech watch & insights",
       group: "socialnetwork",
     },
     {
@@ -90,6 +76,20 @@ const userConfig: UserConfig = {
       group: "socialnetwork",
     },
     {
+      url: "https://bsky.app/profile/heristop.bsky.social",
+      iconSrc: blueSkyIcon,
+      title: "BlueSky",
+      description: "Tech watch & insights",
+      group: "socialnetwork",
+    },
+    {
+      url: "https://instagram.com/heristop",
+      iconSrc: instagramIcon,
+      title: "Instagram",
+      description: "Art & travel Snapshots",
+      group: "socialnetwork",
+    },
+    {
       url: "https://heristop.github.io",
       iconSrc: "/assets/zazen.webp",
       title: "Zazen Code",
@@ -97,17 +97,17 @@ const userConfig: UserConfig = {
       group: "website",
     },
     {
-      url: "https://gutenku.xyz",
-      iconSrc: "/assets/gutenku.webp",
-      title: "GutenKu",
-      description: "AI Haiku Generator",
-      group: "project",
-    },
-    {
       url: "https://pix-me.studio",
       iconSrc: "/assets/pix-me.webp",
       title: "Pix Me!",
       description: "AI Avatar Generator",
+      group: "project",
+    },
+    {
+      url: "https://gutenku.xyz",
+      iconSrc: "/assets/gutenku.webp",
+      title: "GutenKu",
+      description: "AI Haiku Generator",
       group: "project",
     },
     {
