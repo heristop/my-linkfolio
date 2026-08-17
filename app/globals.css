@@ -5,10 +5,10 @@
 @source "../node_modules/linkfolio/dist/index.mjs";
 
 @theme {
-  --color-primary: #6b5278;
-  --color-secondary: #905578;
-  --color-background-start: #e6dff0;
-  --color-background-end: #f0eaf5;
+  --color-primary: oklch(0.479 0.067 313.8);
+  --color-secondary: oklch(0.528 0.091 344.2);
+  --color-background-start: oklch(0.914 0.024 304.5);
+  --color-background-end: oklch(0.945 0.016 310.1);
 
   --background-image-gradient-background: linear-gradient(
     160deg,
@@ -21,11 +21,12 @@
      (LinkedIn, BlueSky) are white to their edges, so on a near-white card they
      had no visible boundary at all. This keeps the card clearly lighter than
      the lavender page while giving a white tile something to sit on. */
-  --lf-card-bg: #f8f4fb;
+  --lf-card-bg: oklch(0.972 0.01 311.2);
   --lf-card-radius: 1.25rem;
   --lf-card-shadow:
-    0 2px 4px rgba(107, 82, 120, 0.04), 0 8px 32px -8px rgba(107, 82, 120, 0.1);
-  --lf-card-border: 1px solid rgba(107, 82, 120, 0.06);
+    0 2px 4px oklch(0.479 0.067 313.8 / 0.04),
+    0 8px 32px -8px oklch(0.479 0.067 313.8 / 0.1);
+  --lf-card-border: 1px solid oklch(0.479 0.067 313.8 / 0.06);
   --lf-card-padding-x: 2.5rem;
   --lf-card-padding-y: 2.5rem;
 
@@ -33,7 +34,7 @@
   --lf-profile-margin-bottom: 1.5rem;
   --lf-name-font-size: 2.25rem;
   --lf-name-font-weight: 400;
-  --lf-name-color: #3d2e4a;
+  --lf-name-color: oklch(0.33 0.052 308.3);
   --lf-name-font-family: var(--font-display), Georgia, serif;
   --lf-alias-color: var(--color-secondary);
   --lf-accent-line-color: var(--color-secondary);
@@ -46,7 +47,7 @@
   --lf-links-padding-x: 1rem;
 
   /* Hover */
-  --lf-network-hover-bg: rgba(107, 82, 120, 0.04);
+  --lf-network-hover-bg: oklch(0.479 0.067 313.8 / 0.04);
 
   /* Footer */
   --lf-footer-opacity: 1;
