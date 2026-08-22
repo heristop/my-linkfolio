@@ -71,12 +71,29 @@ Only two rules sit outside `@theme`, and only because a token cannot express the
 
 ## Environment
 
-Both are optional; unset is a working default.
+All are optional; unset is a working default.
 
-| Variable               | Effect when unset                                                                               |
-| ---------------------- | ----------------------------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | Falls back to `https://heristop.vercel.app` for canonical URLs, the sitemap and Open Graph tags |
-| `NEXT_PUBLIC_GA_ID`    | No analytics script is loaded at all — local and preview builds stay clean                      |
+| Variable                       | Effect when unset                                                                               |
+| ------------------------------ | ----------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`         | Falls back to `https://heristop.vercel.app` for canonical URLs, the sitemap and Open Graph tags |
+| `NEXT_PUBLIC_GA_ID`            | No Google Analytics script is loaded — local and preview builds stay clean                      |
+| `NEXT_PUBLIC_UMAMI_WEBSITE_ID` | Analytics falls back to Google Analytics, or to nothing                                         |
+| `NEXT_PUBLIC_UMAMI_SRC`        | Umami loads from its own cloud rather than from your instance                                   |
+| `NEXT_PUBLIC_UMAMI_HOST_URL`   | The tracker posts back to the origin it was served from                                         |
+
+`NEXT_PUBLIC_UMAMI_WEBSITE_ID` is what switches the deploy to Umami — it is the
+one value the adapter cannot default — and it leaves `NEXT_PUBLIC_GA_ID` ignored
+rather than measuring through both. The other two are independent overrides on
+top of it: `NEXT_PUBLIC_UMAMI_SRC` points the script at a self-hosted instance,
+`NEXT_PUBLIC_UMAMI_HOST_URL` at a collect API on another origin.
+
+`NEXT_PUBLIC_UMAMI_SRC` must be an absolute `http(s)` URL. A path or a bare
+hostname is not an override the adapter accepts — it would quietly load Umami
+Cloud instead, sending your visits somewhere you did not choose — so the build
+fails on one rather than deploying it.
+
+Umami sets no cookie and stores no visitor identifier, so that mode carries
+nothing to consent to.
 
 ## Beyond the template
 
