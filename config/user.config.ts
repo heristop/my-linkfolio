@@ -8,17 +8,47 @@ import {
 } from "linkfolio/dist/assets";
 
 /**
- * GA4 measurement id, read from the environment rather than written here.
+ * Analytics is read from the environment rather than written here.
  *
- * `NEXT_PUBLIC_` is required: the value has to reach the browser, and this
- * module is imported by client components as well as by the server. Leave it
- * unset — locally, or in any preview deploy — and `<Analytics>` loads no
- * third-party script at all.
+ * `NEXT_PUBLIC_` is required on all of these: the values have to reach the
+ * browser, and this module is imported by client components as well as by the
+ * server. Leave them unset — locally, or in any preview deploy — and
+ * `<Analytics>` loads no third-party script at all.
  */
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
+const umamiSrc = process.env.NEXT_PUBLIC_UMAMI_SRC;
+const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
+const umamiHostUrl = process.env.NEXT_PUBLIC_UMAMI_HOST_URL;
+
+/**
+ * Which tracker this deploy runs. A self-hosted Umami wins over GA when both
+ * are configured, so a half-finished migration measures once rather than
+ * twice — and it needs both halves, since neither the script nor the website
+ * id can send a hit alone.
+ *
+ * Umami sets no cookie and stores no visitor identifier, which is why nothing
+ * here has a consent gate to go with it: Linkfolio asks no such question, and
+ * under this provider there is none to ask.
+ */
+function resolveAnalytics(): UserConfig["analytics"] {
+  if (umamiSrc && umamiWebsiteId) {
+    return {
+      provider: "umami" as const,
+      id: umamiWebsiteId,
+      // The adapter defaults to Umami Cloud; this points it at your instance.
+      src: umamiSrc,
+      // Only when the collect API answers on another origin than the script.
+      ...(umamiHostUrl && { attrs: { "data-host-url": umamiHostUrl } }),
+    };
+  }
+
+  return gaId ? { provider: "ga" as const, id: gaId } : undefined;
+}
+
+const analytics = resolveAnalytics();
 
 const userConfig: UserConfig = {
-  ...(gaId && { analytics: { provider: "ga" as const, id: gaId } }),
+  ...(analytics && { analytics }),
   avatarSrc: "/assets/avatar.webp",
   avatarAlt: "Avatar",
   fullName: "Alexandre Mogère",

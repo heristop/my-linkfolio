@@ -71,12 +71,20 @@ Only two rules sit outside `@theme`, and only because a token cannot express the
 
 ## Environment
 
-Both are optional; unset is a working default.
+All are optional; unset is a working default.
 
-| Variable               | Effect when unset                                                                               |
-| ---------------------- | ----------------------------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | Falls back to `https://heristop.vercel.app` for canonical URLs, the sitemap and Open Graph tags |
-| `NEXT_PUBLIC_GA_ID`    | No analytics script is loaded at all — local and preview builds stay clean                      |
+| Variable                       | Effect when unset                                                                               |
+| ------------------------------ | ----------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`         | Falls back to `https://heristop.vercel.app` for canonical URLs, the sitemap and Open Graph tags |
+| `NEXT_PUBLIC_GA_ID`            | No Google Analytics script is loaded — local and preview builds stay clean                      |
+| `NEXT_PUBLIC_UMAMI_SRC`        | Analytics falls back to Google Analytics, or to nothing                                         |
+| `NEXT_PUBLIC_UMAMI_WEBSITE_ID` | Same — Umami needs both halves, since neither sends a hit alone                                 |
+| `NEXT_PUBLIC_UMAMI_HOST_URL`   | The tracker posts back to the origin it was served from                                         |
+
+Setting `NEXT_PUBLIC_UMAMI_SRC` and `NEXT_PUBLIC_UMAMI_WEBSITE_ID` switches the
+deploy to a self-hosted Umami and leaves `NEXT_PUBLIC_GA_ID` ignored rather than
+measuring through both. Umami sets no cookie and stores no visitor identifier,
+so that mode carries nothing to consent to.
 
 ## Beyond the template
 
