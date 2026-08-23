@@ -80,12 +80,22 @@ All are optional; unset is a working default.
 | `NEXT_PUBLIC_UMAMI_WEBSITE_ID` | Analytics falls back to Google Analytics, or to nothing                                         |
 | `NEXT_PUBLIC_UMAMI_SRC`        | Umami loads from its own cloud rather than from your instance                                   |
 | `NEXT_PUBLIC_UMAMI_HOST_URL`   | The tracker posts back to the origin it was served from                                         |
+| `NEXT_PUBLIC_CLOUDFLARE_TOKEN` | Analytics falls back to Google Analytics, or to nothing                                         |
 
 `NEXT_PUBLIC_UMAMI_WEBSITE_ID` is what switches the deploy to Umami — it is the
 one value the adapter cannot default — and it leaves `NEXT_PUBLIC_GA_ID` ignored
 rather than measuring through both. The other two are independent overrides on
 top of it: `NEXT_PUBLIC_UMAMI_SRC` points the script at a self-hosted instance,
 `NEXT_PUBLIC_UMAMI_HOST_URL` at a collect API on another origin.
+
+`NEXT_PUBLIC_CLOUDFLARE_TOKEN` is the third option, ahead of Google Analytics
+and behind Umami — both are cookieless, so the order only settles which one wins
+if you configure both. It buys the least code of the three: no script to
+self-host, nothing to override. It also buys the least data: **Cloudflare Web
+Analytics has no event API**, so the link clicks the cards emit are recorded
+nowhere under it. Page views only. The adapter is registered by
+`config/analytics-cloudflare.ts`, because the published Linkfolio does not ship
+one — naming the provider without that would load nothing at all, silently.
 
 `NEXT_PUBLIC_UMAMI_SRC` must be an absolute `http(s)` URL. A path or a bare
 hostname is not an override the adapter accepts — it would quietly load Umami

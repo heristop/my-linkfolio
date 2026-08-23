@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata, Viewport } from "next";
 import { DM_Mono, DM_Serif_Display } from "next/font/google";
 import { Analytics, ThemeProvider } from "linkfolio";
+import { CloudflareAdapter } from "~/CloudflareAdapter";
 import userConfig from "~/user.config";
 import { siteUrl } from "~/site";
 import "./globals.css";
@@ -79,6 +80,9 @@ export default function RootLayout({
     >
       <body className={body.className}>
         <ThemeProvider>{children}</ThemeProvider>
+        {/* Before <Analytics>: it resolves the adapter as it renders, and
+            Cloudflare is not one the package ships. */}
+        <CloudflareAdapter />
         <Analytics config={userConfig.analytics} />
       </body>
     </html>

@@ -19,6 +19,7 @@ const gaId = process.env.NEXT_PUBLIC_GA_ID;
 const umamiSrc = process.env.NEXT_PUBLIC_UMAMI_SRC;
 const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
 const umamiHostUrl = process.env.NEXT_PUBLIC_UMAMI_HOST_URL;
+const cloudflareToken = process.env.NEXT_PUBLIC_CLOUDFLARE_TOKEN;
 
 /**
  * The adapter treats `src` as an override and silently falls back to Umami
@@ -54,6 +55,11 @@ function selfHostedSrc(): string | undefined {
  * self-hosted script, a collect API on another origin, either, both or
  * neither.
  *
+ * Cloudflare comes next, ahead of GA: it is cookieless like Umami, so putting
+ * it before the tracker that is not costs nothing. Configuring two at once is a
+ * mistake rather than a state to honour, and this order settles it by measuring
+ * once instead of twice.
+ *
  * Umami sets no cookie and stores no visitor identifier, which is why nothing
  * here has a consent gate to go with it: Linkfolio asks no such question, and
  * under this provider there is none to ask.
@@ -68,6 +74,12 @@ function resolveAnalytics(): UserConfig["analytics"] {
       ...(src && { src }),
       ...(umamiHostUrl && { attrs: { "data-host-url": umamiHostUrl } }),
     };
+  }
+
+  if (cloudflareToken) {
+    // Cloudflare counts page views and nothing else — the link clicks the cards
+    // emit go nowhere under it. Deliberate, and stated in the README.
+    return { provider: "cloudflare" as const, id: cloudflareToken };
   }
 
   return gaId ? { provider: "ga" as const, id: gaId } : undefined;
