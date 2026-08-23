@@ -8,17 +8,87 @@ import {
 } from "linkfolio/dist/assets";
 
 /**
- * GA4 measurement id, read from the environment rather than written here.
+ * Analytics is read from the environment rather than written here.
  *
- * `NEXT_PUBLIC_` is required: the value has to reach the browser, and this
- * module is imported by client components as well as by the server. Leave it
- * unset — locally, or in any preview deploy — and `<Analytics>` loads no
- * third-party script at all.
+ * `NEXT_PUBLIC_` is required on all of these: the values have to reach the
+ * browser, and this module is imported by client components as well as by the
+ * server. Leave them unset — locally, or in any preview deploy — and
+ * `<Analytics>` loads no third-party script at all.
  */
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
+const umamiSrc = process.env.NEXT_PUBLIC_UMAMI_SRC;
+const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
+const umamiHostUrl = process.env.NEXT_PUBLIC_UMAMI_HOST_URL;
+const cloudflareToken = process.env.NEXT_PUBLIC_CLOUDFLARE_TOKEN;
+
+/**
+ * The adapter treats `src` as an override and silently falls back to Umami
+ * Cloud for anything that is not an absolute http(s) URL — so a typo here, or
+ * a path like `/stats/script.js`, would ship every visit to a third party
+ * instead of to your instance, with nothing failing to say so.
+ *
+ * Failing the build is the alternative: this module is evaluated while the
+ * site is prerendered (every route is static), so the mistake is caught at
+ * deploy time and never reaches a visitor.
+ */
+function selfHostedSrc(): string | undefined {
+  if (!umamiSrc) {
+    return undefined;
+  }
+
+  if (!/^https?:\/\//.test(umamiSrc)) {
+    throw new Error(
+      `NEXT_PUBLIC_UMAMI_SRC must be an absolute http(s) URL — got "${umamiSrc}". ` +
+        "Leave it unset to use Umami Cloud, or give the full URL of your instance's script.",
+    );
+  }
+
+  return umamiSrc;
+}
+
+/**
+ * Which tracker this deploy runs. The website id is what selects Umami — it is
+ * the only value the adapter cannot default — and it wins over GA, so a
+ * half-finished migration measures once rather than twice.
+ *
+ * `src` and `data-host-url` are independent overrides on top of that: a
+ * self-hosted script, a collect API on another origin, either, both or
+ * neither.
+ *
+ * Cloudflare comes next, ahead of GA: it is cookieless like Umami, so putting
+ * it before the tracker that is not costs nothing. Configuring two at once is a
+ * mistake rather than a state to honour, and this order settles it by measuring
+ * once instead of twice.
+ *
+ * Umami sets no cookie and stores no visitor identifier, which is why nothing
+ * here has a consent gate to go with it: Linkfolio asks no such question, and
+ * under this provider there is none to ask.
+ */
+function resolveAnalytics(): UserConfig["analytics"] {
+  if (umamiWebsiteId) {
+    const src = selfHostedSrc();
+
+    return {
+      provider: "umami" as const,
+      id: umamiWebsiteId,
+      ...(src && { src }),
+      ...(umamiHostUrl && { attrs: { "data-host-url": umamiHostUrl } }),
+    };
+  }
+
+  if (cloudflareToken) {
+    // Cloudflare counts page views and nothing else — the link clicks the cards
+    // emit go nowhere under it. Deliberate, and stated in the README.
+    return { provider: "cloudflare" as const, id: cloudflareToken };
+  }
+
+  return gaId ? { provider: "ga" as const, id: gaId } : undefined;
+}
+
+const analytics = resolveAnalytics();
 
 const userConfig: UserConfig = {
-  ...(gaId && { analytics: { provider: "ga" as const, id: gaId } }),
+  ...(analytics && { analytics }),
   avatarSrc: "/assets/avatar.webp",
   avatarAlt: "Avatar",
   fullName: "Alexandre Mogère",
