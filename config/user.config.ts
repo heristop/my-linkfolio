@@ -171,7 +171,7 @@ const userConfig: UserConfig = {
     {
       url: "https://pix-me.studio",
       iconSrc: "/assets/pix-me.webp",
-      title: "Pix Me! / Pix Who?",
+      title: "Pix Me!",
       description: "AI Avatar Generator & Daily Face Guessing Game",
       group: "project",
       span: "2x2",
@@ -179,7 +179,7 @@ const userConfig: UserConfig = {
     {
       url: "https://gutenku.xyz",
       iconSrc: "/assets/gutenku.webp",
-      title: "GutenKu / GutenVerse",
+      title: "GutenKu",
       description: "AI Haiku Generator & Book Guessing Game",
       group: "project",
       span: "2x1",
