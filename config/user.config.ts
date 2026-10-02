@@ -185,7 +185,7 @@ const userConfig: UserConfig = {
       span: "2x1",
     },
     {
-      url: "https://leclap.pages.dev",
+      url: "https://leclap.dev",
       iconSrc: "/assets/leclap.webp",
       title: "LeClap",
       description: "On-Device Video Composer",
