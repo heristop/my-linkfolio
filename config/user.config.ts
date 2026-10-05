@@ -202,7 +202,7 @@ const userConfig: UserConfig = {
     },
     {
       url: "https://leclap.dev",
-      iconSrc: "/assets/leclap.webp",
+      iconSrc: "/assets/leclap-tile-v9.webp",
       title: "LeClap",
       description: "On-Device Video Composer",
       group: "project",
@@ -218,7 +218,7 @@ const userConfig: UserConfig = {
     },
     {
       url: "https://clover-map.nuxt.dev",
-      iconSrc: "/assets/clover-map.webp",
+      iconSrc: "/assets/clover-map-tile-v8.webp",
       title: "Clover Map",
       description: "Project Management Tool",
       group: "project",
