@@ -170,7 +170,7 @@ const userConfig: UserConfig = {
     },
     {
       url: "https://pix-me.studio",
-      iconSrc: "/assets/pix-me-tile-v5.webp",
+      iconSrc: "/assets/pix-me-tile-v6.webp",
       title: "Pix Me!",
       description: "AI Avatar Generator",
       group: "project",
@@ -178,7 +178,7 @@ const userConfig: UserConfig = {
     },
     {
       url: "https://pix-me.studio/who",
-      iconSrc: "/assets/pix-who-tile-v5.webp",
+      iconSrc: "/assets/pix-who-tile-v6.webp",
       title: "Pix Who?",
       description: "Daily Face Guessing Game",
       group: "project",
@@ -186,7 +186,7 @@ const userConfig: UserConfig = {
     },
     {
       url: "https://gutenku.xyz",
-      iconSrc: "/assets/gutenku-tile-v5.webp",
+      iconSrc: "/assets/gutenku-tile-v7.webp",
       title: "GutenKu",
       description: "AI Haiku Generator",
       group: "project",
@@ -194,7 +194,7 @@ const userConfig: UserConfig = {
     },
     {
       url: "https://gutenku.xyz/game",
-      iconSrc: "/assets/gutenguess-tile-v5.webp",
+      iconSrc: "/assets/gutenguess-tile-v6.webp",
       title: "GutenGuess",
       description: "Daily Book Guessing Game",
       group: "project",
