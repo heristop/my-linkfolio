@@ -178,7 +178,7 @@ const userConfig: UserConfig = {
     },
     {
       url: "https://gutenku.xyz",
-      iconSrc: "/assets/gutenku-tile-v8.webp",
+      iconSrc: "/assets/gutenku-tile-v13.webp",
       title: "GutenKu",
       description: "AI Haiku Generator",
       group: "project",
@@ -194,7 +194,7 @@ const userConfig: UserConfig = {
     },
     {
       url: "https://gutenku.xyz/game",
-      iconSrc: "/assets/gutenguess-tile-v8.webp",
+      iconSrc: "/assets/gutenguess-tile-v16.webp",
       title: "GutenGuess",
       description: "Daily Book Guessing Game",
       group: "project",
